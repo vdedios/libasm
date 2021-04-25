@@ -17,16 +17,16 @@ iterate:
 			inc		rcx
 			jmp		iterate
 compare:
-			mov     al, BYTE [rdi + rcx]
-			cmp     al, BYTE [rsi + rcx]
-			jg      bigger
-			jl      smaller
-			jmp     end
-bigger:
-			mov     rax, 1
-			jmp     end
-smaller:
-			mov     rax, -1
-			jmp     end
+			mov		al, BYTE [rdi + rcx]
+			cmp		al, BYTE [rsi + rcx]
+			jg 		bigger
+			jl 		smaller
+			jmp		end
+bigger:	
+			mov		rax, 1
+			jmp		end
+smaller:		
+			mov		rax, -1
+			jmp		end
 end:
 			ret
