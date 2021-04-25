@@ -61,9 +61,11 @@ static void test_strdup(void)
 static void test_write(void)
 {
     blue(); printf("\nWRITE\n"); reset();
-    WRITE_TEST(1, "asdklfalsdf", 5);
-    WRITE_TEST(2, "err", 3);
-    WRITE_TEST(1, "", 0);
+    //WRITE_TEST(1, "asdklfalsdf", 5);
+    //WRITE_TEST(2, "err", 3);
+    //WRITE_TEST(1, "", 0);
+    ft_write(-1, "paco", 5);
+    printf("ERR %s\n", strerror(errno));
     //int fd = open("./test.txt", O_WRONLY);
     //ft_write(fd, "hola\n", 5);
     //ft_write(fd, "caca", 4);
@@ -75,7 +77,7 @@ static void test_read(void)
     char buff[100];
 
     memset(buff, 0, 100);
-    blue(); printf("\nWRITE\n"); reset();
+    blue(); printf("\nREAD\n"); reset();
     //int fd = open("./test.txt", O_RDONLY);
     //ft_read(fd, buff, 6);
     //printf("%s\n", buff);
@@ -90,7 +92,7 @@ int main()
     //test_strcpy();
     //test_strcmp();
     //test_strdup();
-    //test_write();
-    test_read();
+    test_write();
+    //test_read();
     return (0);
 }
