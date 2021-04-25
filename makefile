@@ -9,7 +9,7 @@ SRCS		=	ft_strlen.s
 OBJS		=	$(addprefix $(OBJ_DIR), $(SRCS:.s=.o))
 
 # TARGETS
-all:			 $(OBJ_DIR) $(NAME)
+all:			 $(NAME)
 
 $(OBJ_DIR):		
 				mkdir -p obj
@@ -18,7 +18,7 @@ $(OBJ_DIR)%.o:	%.s
 				nasm -fmacho64 $< -o $@
 
 
-$(NAME):		$(OBJS)
+$(NAME):		$(OBJ_DIR) $(OBJS)
 				ar rcs $(NAME) $(OBJS)
 
 # RULES
@@ -31,7 +31,7 @@ fclean:			clean
 				rm -rf $(NAME) test
 
 .PHONY:			re
-re:				fclean all
+re:				fclean $(NAME)
 
 .PHONY:			test
 test:			$(NAME)
