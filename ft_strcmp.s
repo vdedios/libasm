@@ -9,7 +9,7 @@ _ft_strcmp:
 iterate:
 			mov		dl, BYTE [rdi + rcx]
 			cmp		BYTE [rsi + rcx], dl
-			jne     compare
+			jne		compare
 			cmp		BYTE [rdi + rcx], 0
 			je		compare
 			cmp		BYTE [rsi + rcx], 0
