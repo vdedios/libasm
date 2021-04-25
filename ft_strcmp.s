@@ -19,8 +19,8 @@ iterate:
 compare:
 			mov		al, BYTE [rdi + rcx]
 			cmp		al, BYTE [rsi + rcx]
-			jg 		bigger
-			jl 		smaller
+			ja 		bigger
+			jb 		smaller
 			jmp		end
 bigger:	
 			mov		rax, 1
