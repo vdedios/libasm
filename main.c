@@ -1,10 +1,9 @@
-#include <stdio.h>
-#include <string.h>
 #include "libasm.h"
 
 #define STRLEN_TEST(str) printf("->[\"%s\"]\n(ft_strlen):%d; (strlen):%d\n\n", str, ft_strlen(str), (int)strlen(str));
 #define STRCPY_TEST(dst, src) printf("->[\"%s\"]\n(ft_strcpy):%s; (strcpy):%s\n\n", src, ft_strcpy(dst, src), strcpy(dst, src));
 #define STRCMP_TEST(s1, s2) printf("->[\"%s, %s\"]\n(ft_strcmp):%d; (strcmp):%d\n\n", s1, s2, ft_strcmp(s1, s2), strcmp(s1, s2));
+#define STRDUP_TEST(s1) printf("->[\"%s\"]\n(ft_strdup):%s; (strdup):%s\n\n", s1, ft_strdup(s1), strdup(s1));
 
 /*
 ** Colors
@@ -50,10 +49,19 @@ static void test_strcmp(void)
     STRCMP_TEST("", "");
 }
 
+static void test_strdup(void)
+{
+    blue(); printf("\nSTRCPY\n"); reset();
+    STRDUP_TEST("asdklfalsdf");
+    STRDUP_TEST("hola");
+    STRDUP_TEST("");
+}
+
 int main()
 {
     //test_strlen();
     //test_strcpy();
-    test_strcmp();
+    //test_strcmp();
+    test_strdup();
     return (0);
 }

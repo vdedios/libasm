@@ -5,6 +5,7 @@ OBJ_DIR		=	obj/
 
 SRCS		=	ft_strlen.s \
 				ft_strcpy.s \
+				ft_strdup.s \
 				ft_strcmp.s 
 
 OBJS		=	$(addprefix $(OBJ_DIR), $(SRCS:.s=.o))
