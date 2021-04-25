@@ -1,5 +1,5 @@
 section	.text
-global	_ft_strlen
+global	_ft_strcpy
 
 _ft_strlen:
 			xor		rax, rax
