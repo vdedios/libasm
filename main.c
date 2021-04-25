@@ -70,12 +70,27 @@ static void test_write(void)
     //close(fd);
 }
 
+static void test_read(void)
+{
+    char buff[100];
+
+    memset(buff, 0, 100);
+    blue(); printf("\nWRITE\n"); reset();
+    //int fd = open("./test.txt", O_RDONLY);
+    //ft_read(fd, buff, 6);
+    //printf("%s\n", buff);
+    //close(fd);
+    ft_read(1, buff, 6);
+    printf("%s\n", buff);
+}
+
 int main()
 {
     //test_strlen();
     //test_strcpy();
     //test_strcmp();
     //test_strdup();
-    test_write();
+    //test_write();
+    test_read();
     return (0);
 }
