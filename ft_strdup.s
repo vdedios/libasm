@@ -16,6 +16,8 @@ allocate:
 			push	rdi
 			mov		rdi, rcx
 			call	_malloc
+            cmp     rax, 0
+            je      err
 			pop     rdi
 copy:
 			mov		dl, BYTE [rdi + rcx]
@@ -24,5 +26,7 @@ copy:
 			je		end
 			inc		rcx
 			jmp		copy
+err:
+            xor     rax, rax
 end:
 			ret
