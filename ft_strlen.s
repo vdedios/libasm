@@ -7,9 +7,9 @@ _ft_strlen:
 
 count:
 			cmp		BYTE [rdi + rax], 0
-            je      done
+            je      end
 			inc		rax
-            jmp     count
+            jmp		count
 
-done:
+end:
 			ret

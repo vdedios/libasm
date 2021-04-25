@@ -1,11 +1,12 @@
 # ENVS
 NAME		=	libasm.a
 
-CFLAGS 		=	-Wall -Werror -Wextra
-
 OBJ_DIR		=	obj/
 
-SRCS		=	ft_strlen.s
+SRCS		=	ft_strlen.s \
+				ft_strcpy.s \
+				ft_strcmp.s 
+
 OBJS		=	$(addprefix $(OBJ_DIR), $(SRCS:.s=.o))
 
 # TARGETS
@@ -35,7 +36,7 @@ re:				fclean $(NAME)
 
 .PHONY:			test
 test:			$(NAME)
-				gcc $(CFLAGS) -L. -lasm main.c -o $@
+				gcc -L. -lasm main.c -o $@
 				./$@
 
 .PHONY:			clean fclean re test bonus test_bonus
