@@ -4,6 +4,7 @@
 #define STRCPY_TEST(dst, src) printf("->[\"%s\"]\n(ft_strcpy):%s; (strcpy):%s\n\n", src, ft_strcpy(dst, src), strcpy(dst, src));
 #define STRCMP_TEST(s1, s2) printf("->[\"%s, %s\"]\n(ft_strcmp):%d; (strcmp):%d\n\n", s1, s2, ft_strcmp(s1, s2), strcmp(s1, s2));
 #define STRDUP_TEST(s1) printf("->[\"%s\"]\n(ft_strdup):%s; (strdup):%s\n\n", s1, ft_strdup(s1), strdup(s1));
+#define WRITE_TEST(fd, buff, nbyte) printf("->[\"%d, %s, %d\"]\n(ft_write):%d; (write):%d\n\n", fd, (char *)buff, (int)nbyte, (int)ft_write(fd, buff, nbyte), (int)write(fd, buff, nbyte));
 
 /*
 ** Colors
@@ -57,11 +58,24 @@ static void test_strdup(void)
     STRDUP_TEST("");
 }
 
+static void test_write(void)
+{
+    blue(); printf("\nWRITE\n"); reset();
+    WRITE_TEST(1, "asdklfalsdf", 5);
+    WRITE_TEST(2, "err", 3);
+    WRITE_TEST(1, "", 0);
+    //int fd = open("./test.txt", O_WRONLY);
+    //ft_write(fd, "hola\n", 5);
+    //ft_write(fd, "caca", 4);
+    //close(fd);
+}
+
 int main()
 {
     //test_strlen();
     //test_strcpy();
     //test_strcmp();
-    test_strdup();
+    //test_strdup();
+    test_write();
     return (0);
 }
