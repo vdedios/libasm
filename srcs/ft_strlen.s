@@ -1,6 +1,8 @@
 section	.text
 global	_ft_strlen
 
+;ft_strlen(char *str);
+
 _ft_strlen:
 			xor		rax, rax
 			jmp		count

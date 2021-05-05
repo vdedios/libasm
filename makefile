@@ -1,6 +1,7 @@
 # ENVS
 NAME		=	libasm.a
 
+SRC_DIR		=	srcs/
 OBJ_DIR		=	obj/
 
 SRCS		=	ft_strlen.s \
@@ -18,7 +19,7 @@ all:			 $(NAME)
 $(OBJ_DIR):		
 				mkdir -p obj
 
-$(OBJ_DIR)%.o:	%.s
+$(OBJ_DIR)%.o:	$(SRC_DIR)%.s
 				nasm -fmacho64 $< -o $@
 
 

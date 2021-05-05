@@ -61,11 +61,11 @@ static void test_strdup(void)
 static void test_write(void)
 {
     blue(); printf("\nWRITE\n"); reset();
-    //WRITE_TEST(1, "asdklfalsdf", 5);
-    //WRITE_TEST(2, "err", 3);
-    //WRITE_TEST(1, "", 0);
-    ft_write(-1, "paco", 5);
-    printf("ERR %s\n", strerror(errno));
+    WRITE_TEST(1, "asdklfalsdf", 5);
+    WRITE_TEST(2, "err", 3);
+    WRITE_TEST(1, "", 0);
+    //ft_write(-1, "paco", 5);
+    //printf("ERR %s\n", strerror(errno));
     //int fd = open("./test.txt", O_WRONLY);
     //ft_write(fd, "hola\n", 5);
     //ft_write(fd, "caca", 4);
@@ -88,10 +88,10 @@ static void test_read(void)
 
 int main()
 {
-    //test_strlen();
-    //test_strcpy();
-    //test_strcmp();
-    //test_strdup();
+    test_strlen();
+    test_strcpy();
+    test_strcmp();
+    test_strdup();
     test_write();
     //test_read();
     return (0);

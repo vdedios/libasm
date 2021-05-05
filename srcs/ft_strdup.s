@@ -3,6 +3,8 @@ section	.text
 global	_ft_strdup
 extern	_malloc
 
+;char    *ft_strdup(const char *s1);
+
 _ft_strdup:
 			xor		rcx, rcx
 			xor		rdx, rdx
