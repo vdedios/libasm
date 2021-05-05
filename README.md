@@ -1,5 +1,7 @@
 # Libasm
 
+[![MIT License](https://img.shields.io/badge/coverage-100%25-green)](https://github.com/migferna42/minishell/runs/1965281956)
+
 Libasm is a simple set of functions from `lib c` written in assembly. The aim of this project is to introduce to the amazing world of low level programming.
 
 ## Project specifications
